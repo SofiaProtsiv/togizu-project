@@ -1,0 +1,127 @@
+@import '../common/breakpoints';
+
+.footer {
+  background-color: var(--footer-bg);
+  padding: 40px 0 50px 0;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  @include onTablet {
+    gap: 20px;
+  }
+  @include onDesktop {
+    flex-wrap: nowrap;
+    gap: 0;
+    flex-direction: row;
+  }
+}
+.footer-logo-wrapper {
+  width: 100%;
+}
+.footer-logo {
+  opacity: 0.4;
+  filter: grayscale(100%);
+  & > img {
+    width: 220px;
+    height: auto;
+    @include onTablet {
+      width: 280px;
+    }
+    @include onDesktop {
+      width: 320px;
+    }
+  }
+}
+.footer-rights {
+  color: var(--light-text-color);
+  margin: 0;
+}
+.footer-info-wrapper {
+  width: 100%;
+}
+.footer-social-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+.footer-social-link {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  &:hover > .speech {
+    display: inline-block;
+  }
+  & > svg {
+    fill: var(--light-text-color);
+    width: 24px;
+    height: 24px;
+  }
+}
+.footer-input {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 14px;
+  border: none;
+  background-color: var(--light-text-color);
+  &::placeholder {
+    font-style: italic;
+    color: var(--black-color);
+  }
+}
+.footer-nav-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  margin-top: 28px;
+  margin-bottom: 0;
+  list-style: none;
+  @include onTablet {
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+  }
+}
+.footer-nav-item {
+}
+.footer-nav-link {
+  color: var(--light-text-color);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 250ms ease-in-out;
+  &:hover {
+    color: var(--light-color);
+  }
+}
+
+.speech {
+  position: absolute;
+  top: -140%;
+  left: -100%;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 4px 8px;
+  text-align: center;
+  background-color: var(--light-text-color);
+  display: none;
+}
+
+.speech:after {
+  content: ' ';
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left: 41px;
+  top: 28px;
+  transform: translate(-50%, -50%);
+  border: 6px solid;
+  border-color: #4c4c4c rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #252525;
+}

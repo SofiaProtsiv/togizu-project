@@ -1,0 +1,32 @@
+@import '../common/breakpoints';
+
+.heading-section {
+  border: solid 1px transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(90deg, white 0%, gray 50%, gray 50%, white 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+.subtitle {
+  margin: 0;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--light-text-color);
+  text-transform: uppercase;
+  @include onTablet {
+    font-size: 18px;
+  }
+}
+.title {
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  color: var(--light-text-color);
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  @include onTablet {
+    font-size: 40px;
+  }
+}

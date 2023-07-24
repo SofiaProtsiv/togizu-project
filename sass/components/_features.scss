@@ -1,0 +1,67 @@
+@import '../common/breakpoints';
+.features-section {
+}
+.features-title {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+}
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+.features-item {
+  width: 100%;
+  @include onTablet {
+    min-width: 280px;
+    width: calc(50% - 16px);
+  }
+  @include onDesktop {
+    min-width: 300px;
+    width: calc(25% - 20px);
+  }
+}
+.features-item-icon {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  align-self: center;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  background-color: var(--light-text-color);
+  border-radius: 50%;
+  transition: background-color 250ms ease-in-out;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--accent-color);
+  }
+
+  & > svg {
+    width: 32px;
+    height: 32px;
+    transition: fill 250ms ease-in-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active > svg {
+    fill: var(--white-color);
+  }
+}
+.features-item-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.features-item-text {
+  text-align: center;
+}
